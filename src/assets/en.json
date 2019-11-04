@@ -1,0 +1,15 @@
+{
+  "manageCampaign": {
+    "title": "Manage Campaigns"
+  },
+  "campaignTable": {
+    "campaign": "Campaign",
+    "view": "View",
+    "actions": "Actions",
+    "viewPricing": " View Pricing",
+    "CSV": "CSV"
+  },
+  "campaignModal": {
+    "pricing": "Pricing"
+  }
+}

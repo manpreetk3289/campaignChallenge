@@ -1,0 +1,27 @@
+<div mat-dialog-content>
+  <div class="header">
+    <img class="imgStyle" src="./assets/{{ data.image_url }}" />
+    <div class="detail">
+      <div class="alignRegion fontStyle">
+        {{ data.name }}
+      </div>
+      <div>{{ data.region }}</div>
+    </div>
+  </div>
+  <div class="body">
+    <h1>{{ "campaignModal.pricing" | translate }}</h1>
+    <div class="list">
+      <div>
+        <span>1 Week - 1 Month</span>
+        <span class="fontStyle">$ 100.00</span>
+      </div>
+      <div><span>6 Months</span> <span class="fontStyle">$ 500.00</span></div>
+      <div><span>6 Months</span> <span class="fontStyle">$ 500.00</span></div>
+    </div>
+  </div>
+  <div mat-dialog-actions class="footer">
+    <button mat-button [mat-dialog-close]="'data.animal'" cdkFocusInitial>
+      Close
+    </button>
+  </div>
+</div>

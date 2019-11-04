@@ -1,0 +1,37 @@
+.campaign {
+  display: flex;
+  flex-direction: row;
+  span {
+    padding: 10px 5px;
+  }
+  .align {
+    margin-bottom: 5px;
+  }
+
+  img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.view {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 20px;
+    margin-right: 5px;
+  }
+}
+.actions {
+  span {
+    padding-right: 15px;
+  }
+  img {
+    width: 20px;
+  }
+}
+
+.mat-form-field-infix {
+  display: none !important;
+}

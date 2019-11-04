@@ -1,0 +1,81 @@
+<table
+  mat-table
+  class="mat-elevation-z8 "
+  style="width:100%"
+  [dataSource]="getDataSource()"
+>
+  <!-- Index Column -->
+  <ng-container matColumnDef="Date">
+    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <td mat-cell *matCellDef="let data">
+      <div>{{ data.date | date: "MMM y, d" }}</div>
+      <div>{{ getDateDiff(data.date) }}</div>
+    </td>
+  </ng-container>
+
+  <!-- Index Column -->
+  <ng-container matColumnDef="Campaign">
+    <th mat-header-cell *matHeaderCellDef>
+      {{ "campaignTable.campaign" | translate }}
+    </th>
+    <td mat-cell *matCellDef="let data">
+      <div class="campaign">
+        <span>
+          <img src="./assets/{{ data.image_url }}" />
+        </span>
+        <span>
+          <div class="align">{{ data.name }}</div>
+          <div>{{ data.region }}</div>
+        </span>
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Index Column -->
+  <ng-container matColumnDef="View">
+    <th mat-header-cell *matHeaderCellDef>
+      {{ "campaignTable.view" | translate }}
+    </th>
+    <td mat-cell *matCellDef="let data">
+      <div class="view" (click)="openDialog(data)">
+        <img src="./assets/Price.png" />
+        {{ "campaignTable.viewPricing" | translate }}
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- Index Column -->
+  <ng-container matColumnDef="Actions">
+    <th mat-header-cell *matHeaderCellDef>
+      {{ "campaignTable.actions" | translate }}
+    </th>
+    <td mat-cell *matCellDef="let data">
+      <div class="actions">
+        <span>
+          <img src="./assets/file.png" />
+          {{ "campaignTable.CSV" | translate }}</span
+        >
+        <span>
+          <img src="./assets/statistics-report.png" />
+          Report</span
+        >
+        <span>
+          <mat-form-field class="example-full-width">
+            <input
+              matInput
+              [matDatepicker]="picker"
+              (dateChange)="addEvent('change', $event, data)"
+              placeholder="Choose a date"
+            />
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <img (click)="picker.open()" src="./assets/calendar.png" />
+          Schedule Again
+        </span>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
